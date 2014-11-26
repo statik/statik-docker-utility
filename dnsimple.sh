@@ -1,0 +1,1 @@
+curl -H "X-DNSimple-Domain-Token: $DOMAIN_TOKEN" -H "Accept: application/json" -H "Content-Type: application/json" -X PUT "https://api.dnsimple.com/v1/domains/elliotmurphy.com/records/3469118" -d '{"record":{"content":"'$(curl -s icanhazip.com)'"}}'
