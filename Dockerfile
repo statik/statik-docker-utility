@@ -24,4 +24,5 @@ RUN apt-get -yqq update;\
     gem install bundler --no-ri --no-rdoc;\
     gem install foreman --no-ri --no-rdoc;\
     rbenv rehash
-
+USER app
+WORKDIR /home/app
