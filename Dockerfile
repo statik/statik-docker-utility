@@ -10,6 +10,7 @@ RUN apt-get -yqq update;\
     sudo build-essential libssl-dev libcurl4-openssl-dev libreadline6-dev\
     curl git-core nodejs npm postgresql-client-9.4 libpq-dev\
     libmysqlclient-dev libxslt-dev libxml2-dev libaspell-dev libcrack2-dev\
+    opam \
     openjdk-7-jre vim-nox;\
     sudo ln -s /usr/bin/nodejs /usr/bin/node;\
     apt-get clean;\
@@ -23,6 +24,7 @@ RUN apt-get -yqq update;\
     rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION;\
     gem install bundler --no-ri --no-rdoc;\
     gem install foreman --no-ri --no-rdoc;\
-    rbenv rehash
-USER app
+    rbenv rehash;\
+    opam init -a;\
+    opam install -y mirage
 WORKDIR /home/app
